@@ -1,0 +1,38 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.nav-link {
+    @apply text-gray-600 hover:text-green-500 transition duration-300;
+}
+
+.mobile-nav-link {
+    @apply block py-2 text-gray-600 hover:text-green-500 transition duration-300 text-center;
+}
+
+.chat-message {
+    @apply mb-4 p-3 rounded-lg max-w-[80%];
+}
+
+.chat-message.user {
+    @apply bg-green-100 ml-auto;
+}
+
+.chat-message.bot {
+    @apply bg-gray-100;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 0.5s ease-in-out;
+}

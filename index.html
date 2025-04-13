@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green Energy Solutions</title>
+    <link href="./style.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-50">
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <i class="fas fa-leaf text-green-600 text-2xl mr-2"></i>
+                    <span class="text-xl font-bold text-gray-800">GreenEnergy</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#vendors" class="nav-link">Vendors</a>
+                    <a href="#requirements" class="nav-link">Requirements</a>
+                    <a href="#resources" class="nav-link">Resources</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <button id="loginBtn" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600">Login</button>
+                </div>
+                <button class="md:hidden" id="menuBtn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobileMenu" class="hidden fixed top-0 left-0 w-full h-full bg-white z-40 pt-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="mobile-nav-link">Home</a>
+                <a href="#about" class="mobile-nav-link">About</a>
+                <a href="#vendors" class="mobile-nav-link">Vendors</a>
+                <a href="#resources" class="mobile-nav-link">Resources</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
+                <button class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 w-full">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <section id="home" class="pt-24 pb-12 bg-gradient-to-r from-green-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
+                        Embrace Green Energy Solutions
+                    </h1>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Discover sustainable energy solutions that power our future while protecting our planet.
+                    </p>
+                    <button class="bg-green-500 text-white px-8 py-3 rounded-lg hover:bg-green-600 transition duration-300">
+                        Get Started
+                    </button>
+                </div>
+                <div class="md:w-1/2 mt-8 md:mt-0" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Solar Panels" 
+                         class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">About Green Energy</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-solar-panel text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Solar Energy</h3>
+                    <p class="text-gray-600">Harness the power of the sun with modern solar technology solutions.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-wind text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Wind Power</h3>
+                    <p class="text-gray-600">Clean, renewable energy from wind farms and turbines.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-water text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-3">Hydroelectric</h3>
+                    <p class="text-gray-600">Sustainable power generated from flowing water sources.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="vendors" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Trusted Vendors</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Vendor cards will be dynamically populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <section id="requirements" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Submit Your Requirements</h2>
+            <div class="max-w-2xl mx-auto">
+                <form id="requirementsForm" class="bg-white p-8 rounded-lg shadow-md space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Full Name *</label>
+                            <input type="text" name="name" required class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Phone Number *</label>
+                            <input type="tel" name="phone" required class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Email Address *</label>
+                        <input type="email" name="email" required class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Location *</label>
+                        <input type="text" name="location" required class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Type of Service Required *</label>
+                        <select name="serviceType" required class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                            <option value="">Select a service</option>
+                            <option value="solar">Solar Panel Installation</option>
+                            <option value="wind">Wind Energy Solutions</option>
+                            <option value="hybrid">Hybrid Systems</option>
+                            <option value="maintenance">Maintenance & Support</option>
+                            <option value="consultation">Energy Consultation</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Property Type *</label>
+                        <select name="propertyType" required class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                            <option value="">Select property type</option>
+                            <option value="residential">Residential</option>
+                            <option value="commercial">Commercial</option>
+                            <option value="industrial">Industrial</option>
+                            <option value="agricultural">Agricultural</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Current Monthly Energy Bill (₹) *</label>
+                        <input type="number" name="monthlyBill" required class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Additional Requirements</label>
+                        <textarea name="requirements" rows="4" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500" placeholder="Please describe your specific requirements or any additional information..."></textarea>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Preferred Contact Time</label>
+                        <select name="contactTime" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                            <option value="morning">Morning (9 AM - 12 PM)</option>
+                            <option value="afternoon">Afternoon (12 PM - 4 PM)</option>
+                            <option value="evening">Evening (4 PM - 7 PM)</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="terms" name="terms" required class="mr-2">
+                        <label for="terms" class="text-gray-700">I agree to be contacted by service providers</label>
+                    </div>
+                    <button type="submit" class="w-full bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600 transition duration-300">
+                        Submit Requirements
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="resources" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Resources</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-right">
+                    <h3 class="text-xl font-semibold mb-4">Educational Materials</h3>
+                    <ul class="space-y-3">
+                        <li><i class="fas fa-book mr-2 text-green-500"></i>Green Energy Basics</li>
+                        <li><i class="fas fa-file-pdf mr-2 text-green-500"></i>Installation Guides</li>
+                        <li><i class="fas fa-video mr-2 text-green-500"></i>Tutorial Videos</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md" data-aos="fade-left">
+                    <h3 class="text-xl font-semibold mb-4">Tools & Calculators</h3>
+                    <ul class="space-y-3">
+                        <li><i class="fas fa-calculator mr-2 text-green-500"></i>Energy Savings Calculator</li>
+                        <li><i class="fas fa-sun mr-2 text-green-500"></i>Solar Panel Estimator</li>
+                        <li><i class="fas fa-chart-line mr-2 text-green-500"></i>ROI Analysis Tool</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-up">Contact Us</h2>
+            <div class="max-w-lg mx-auto">
+                <form id="contactForm" class="space-y-6">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Name</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Message</label>
+                        <textarea class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div id="chatbot" class="fixed bottom-4 right-4 z-50">
+        <button id="chatbotToggle" class="bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600">
+            <i class="fas fa-comments text-2xl"></i>
+        </button>
+        <div id="chatbotWindow" class="hidden absolute bottom-16 right-0 w-80 bg-white rounded-lg shadow-xl">
+            <div class="p-4 border-b">
+                <h3 class="text-lg font-semibold">Green Energy Assistant</h3>
+            </div>
+            <div id="chatMessages" class="h-80 overflow-y-auto p-4">
+                <!-- Chat messages will be dynamically added here -->
+            </div>
+            <div class="p-4 border-t">
+                <input type="text" id="chatInput" placeholder="Type your question..." 
+                       class="w-full px-3 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+            </div>
+        </div>
+    </div>
+
+    <div id="loginModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="bg-white rounded-lg p-8 max-w-md w-full">
+                <h2 class="text-2xl font-bold mb-6">Login</h2>
+                <form id="loginForm" class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Password</label>
+                        <input type="password" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                    </div>
+                    <button type="submit" class="w-full bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600">
+                        Login
+                    </button>
+                    <p class="text-center text-gray-600">
+                        Don't have an account? 
+                        <a href="#" id="signupLink" class="text-green-500 hover:text-green-600">Sign up</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="signupModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="bg-white rounded-lg p-8 max-w-md w-full">
+                <h2 class="text-2xl font-bold mb-6">Sign Up</h2>
+                <form id="signupForm" class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Name</label>
+                        <input type="text" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Password</label>
+                        <input type="password" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Confirm Password</label>
+                        <input type="password" class="w-full px-4 py-2 rounded-lg border focus:outline-none focus:border-green-500">
+                    </div>
+                    <button type="submit" class="w-full bg-green-500 text-white px-6 py-3 rounded-lg hover:bg-green-600">
+                        Sign Up
+                    </button>
+                    <p class="text-center text-gray-600">
+                        Already have an account? 
+                        <a href="#" id="loginLink" class="text-green-500 hover:text-green-600">Login</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./main.js"></script>
+</body>
+</html>
